@@ -39,6 +39,10 @@
      $misc = $_POST["misc"];
      $sale = $_POST["sale"];
 
+     $memes = array("https://www.askideas.com/media/46/Funny-Money-Meme-Thought-I-Had-Some-Money-And-Its-Gone-Image.jpg", "http://img.memecdn.com/y-u-no_o_1007825.jpg", "http://images.memes.com/meme/546197");
+     $randomMeme = rand(0,2);
+     $dankMeme = $memes[$randomMeme];
+
      if($sale == "yes") {
        $rifles = $rifles/2;
        $totalAttachments = $totalAttachments/2;
@@ -46,6 +50,10 @@
      }
 
      $total = $rifles + $totalAttachments + $uniform + $vest +$pistol + $backpack + $hat + $glasses +$misc;
+
+   }
+   else{
+     $dankMeme = "http://www.ntsc-tv.com/images/tv/pixel-1x1-clear.gif";
    }
    ?>
 
@@ -194,6 +202,8 @@
         <p>You lost: <b> &pound<?php echo $total; ?> </b> </p>
         <br>
         <input type="submit" value="Calculate!">
+        <br>
+        <img src="<?php echo $dankMeme; ?>">
       </div>
      </div>
     </center>
